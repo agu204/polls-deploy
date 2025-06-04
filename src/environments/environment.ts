@@ -1,5 +1,5 @@
 export const environment = {
-    apiUrl: "https://localhost:7034/api/"
+    apiUrl: "https://polls-web.runasp.net/api/"
     
    
   };

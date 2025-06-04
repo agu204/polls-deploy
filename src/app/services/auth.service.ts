@@ -26,12 +26,11 @@ export class AuthService {
 
   async login(authData: AuthRequest, rememberMe: boolean): Promise<Result<AuthResponse>> { // Iniciar sesión
     const result = await this.api.post<AuthResponse>('Auth/login', authData);
-      console.log('[Login] result completo:', result);
-       console.log('[Login] result.data:', result.data);
+      
        
     if (result.success) {
       const { accessToken, user } = result.data; // guardo info de la respuesta AuthResponde
-      console.log('[Login] accessToken extraído:', accessToken);
+      
       this.api.jwt = result.data.accessToken;
        
       if (rememberMe) { // Si se pulsó el botón recuérdame
