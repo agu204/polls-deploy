@@ -1,0 +1,46 @@
+<app-nav></app-nav>
+
+<div class="poll-container" *ngIf="poll">
+  <h2>{{ poll.title }}</h2>
+  <p>{{ poll.description }}</p>
+
+  @if (poll.isClosed) {
+    <p class="estado-cerrado">Esta encuesta está cerrada.</p>
+  } @else if (hasVoted) {
+    <p>Ya has votado en esta encuesta.</p>
+  }
+  @else {
+    <form (ngSubmit)="submitVote()">
+      @for (option of poll.options; track option.id) {
+        <div class="opcion">
+          <label>
+            <input
+              [type]="poll.allowsMultipleAnswers ? 'checkbox' : 'radio'"
+              name="option"
+              [value]="option.id"
+              [checked]="selectedOptionIds.includes(option.id)"
+              (change)="onOptionChange($event, option.id)"
+            />
+            {{ option.text }}
+          </label>
+          <span class="votos">Votos: {{ option.voteCount }}</span>
+        </div>
+      }
+
+      <button type="submit">Votar</button>
+    </form>
+  }
+
+  
+  
+@if (canClosePoll) {
+  <button class="close-btn" (click)="closePoll()">Cerrar encuesta</button>
+}
+
+@if (isAdmin) {
+  <button class="delete-btn" (click)="deletePoll()">Eliminar encuesta</button>
+}
+
+</div>
+
+<app-footer></app-footer>

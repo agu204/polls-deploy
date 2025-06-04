@@ -1,0 +1,116 @@
+.custom-menubar {
+    background-color: white;
+}
+
+span {
+    color: #40308a;
+    font-weight: 400;
+    font-size: larger;
+}
+
+a {
+    text-decoration: none;
+    text-decoration-color: none;
+}
+
+img:hover {
+    /* transform: scale(0.95); */
+    filter: drop-shadow(0px 4px 10px rgb(208, 223, 255));
+}
+
+.session-link {
+    cursor: pointer;
+}
+
+button {
+    border: 0px;
+    background-color: #4273c1;
+    color: white;
+    border-radius: 30px;
+    padding: 15px;
+    font-size: small;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #2020a1;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.logo {
+    margin: 10px;
+}
+
+.desktop-logo {
+    display: block;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+.user-icon {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.logout{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.logo{
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+    .menu-items {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .greeting,
+    .icon,
+    .p-button {
+        margin-bottom: 10px;
+    }
+
+    .icon {
+        width: 30px;
+    }
+
+    .logout{
+        margin: 5px;
+    }
+
+    .desktop-logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+    }
+
+    .user-icon {
+        margin: 5px;
+    }
+
+    .cart{
+        margin: 5px;
+    }
+
+
+    .logo {
+        height: 40px;
+        margin: 0;
+    }
+
+    .p-button {
+        padding: 10px;
+        font-size: smaller;
+    }
+}

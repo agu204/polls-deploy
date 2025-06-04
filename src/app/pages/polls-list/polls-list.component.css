@@ -1,0 +1,78 @@
+.encuestas-container {
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f1f5ff, #e0ecff);
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #305aa8;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .username {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  button {
+    background-color: #090139;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0800ff;
+  }
+  
+  .contenido-placeholder {
+    margin-top: 3rem;
+    text-align: center;
+    color: #333;
+  }
+  .polls-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+  }
+  
+  .poll-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #fdfdfd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .poll-card h3 {
+    margin-top: 0;
+  }
+  
+  .poll-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .estado {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .estado.cerrada {
+    color: red;
+  }
+
+  

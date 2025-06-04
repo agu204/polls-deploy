@@ -1,0 +1,44 @@
+<app-nav></app-nav>
+
+<div class="panel-top h-16rem d-flex w-full">
+    <p class="m-auto text-white line-height-4 text-6xl uppercase font-bold">
+        - MI PERFIL -
+    </p>
+</div>
+
+<br><br>
+
+<!-- User Info -->
+<fieldset>
+    <legend>Perfil de {{user.role}}</legend>
+    <form (ngSubmit)="onSubmit()" [formGroup]="userForm">
+
+        <div class="profile-row">
+            <label for="name">Nombre:
+                <input type="text" [value]="user?.name" formControlName="name" [readonly]="!isEditing">
+            </label>
+        </div>
+        <div class="profile-row">
+            <label for="email">Correo:
+                <input id="email" type="email" formControlName="email" [readonly]="!isEditing" [value]="user?.email" />
+            </label>
+        </div>
+        <div class="profile-row">
+            <label for="address">Dirección:
+                <input id="address" type="text" formControlName="address" [readonly]="!isEditing"
+                [value]="user?.address" />
+            </label>
+        </div>
+        <div class="profile-row-buttons">
+            <button type="button" [ngClass]="isEditing ? 'btn-edit' : 'btn-secondary'" class="btn btn-secondary"
+                (click)="edit()">
+                {{ isEditing? 'Cancelar edición' : 'Editar' }}
+            </button>
+            <button type="submit" class="btn btn-primary" [hidden]="!isEditing || userForm.invalid">
+                Guardar Cambios
+            </button>
+        </div>
+    </form>
+</fieldset>
+
+<app-footer></app-footer>

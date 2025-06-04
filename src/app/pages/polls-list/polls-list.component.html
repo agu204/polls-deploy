@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+
+<div class="polls-container">
+  <h2>Encuestas activas</h2>
+
+  @if (polls.length === 0) {
+    <p>No hay encuestas disponibles.</p>
+  }
+
+  @for (poll of polls; track poll.id) {
+    <div class="poll-card">
+      <h3>{{ poll.title }}</h3>
+      <p>{{ poll.description }}</p>
+      <p class="estado" [ngClass]="{ 'cerrada': poll.isClosed }">
+        Estado: {{ poll.isClosed ? 'Cerrada' : 'Abierta' }}
+      </p>
+      
+      <ul>
+        @for (option of poll.options; track option.id) {
+          <li>
+            {{ option.text }} - <strong>{{ option.voteCount }}</strong> votos
+          </li>
+        }
+      </ul>
+      <button (click)="goToPoll(poll.id)">Ver Detalle</button>
+    </div>
+  }
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,37 @@
+<app-nav></app-nav>
+
+<div class="poll-container">
+  <div class="poll-box">
+    <h2 class="poll-title">Crear Encuesta</h2>
+
+    <form (ngSubmit)="submitPoll()" #pollForm="ngForm">
+
+      <div class="form-group">
+        <label for="title">Título:</label>
+        <input type="text" id="title" [(ngModel)]="poll.title" name="title" required class="input-field" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descripción:</label>
+        <textarea id="description" [(ngModel)]="poll.description" name="description" required class="input-field"></textarea>
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label>
+          <input type="checkbox" [(ngModel)]="poll.allowsMultipleAnswers" name="allowsMultipleAnswers" />
+          Permitir múltiples respuestas
+        </label>
+      </div>
+
+      <div class="form-group" *ngFor="let option of poll.options; let i = index; trackBy: trackByIndex">
+        <input type="text" [(ngModel)]="poll.options[i]" name="option{{i}}" required class="input-field" />
+        <button type="button" (click)="removeOption(i)" class="remove-btn">Eliminar</button>
+      </div>
+
+      <button type="button" (click)="addOption()" class="action-btn">Añadir opción</button>
+      <button type="submit" class="submit-btn">Crear Encuesta</button>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

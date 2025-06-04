@@ -1,0 +1,29 @@
+<p-menubar [model]="items" styleClass="custom-menubar">
+
+    <!-- Logo -->
+    <ng-template pTemplate="start">
+      <img src="polls-logo.png" alt="Logo" class="logo desktop-logo">
+      <img src="polls-logo.png" alt="Logo" class="logo mobile-logo">
+    </ng-template>
+  
+    <!-- Botones a la derecha -->
+    <ng-template pTemplate="end">
+      <span class="vertical-align-middle lg:m-4" *ngIf="authService.isAuthenticated()">
+        ¡Hola, {{ name }}!
+      </span>
+  
+      <a *ngIf="authService.isAuthenticated()" (click)="navigateToProfile()">
+        <img src="icons/user-icon.png" alt="icono-user" class="user-icon" width="40px">
+      </a>
+  
+      <a *ngIf="!authService.isAuthenticated()" class="session-link" (click)="authClick()">
+        <button class="p-button font-bold ml-4">Iniciar sesión</button>
+      </a>
+  
+      <a *ngIf="authService.isAuthenticated()" class="session-link" (click)="authClick()">
+        <img src="icons/logout.png" alt="icono-logout" width="40px" class="logout">
+      </a>
+    </ng-template>
+  
+  </p-menubar>
+  

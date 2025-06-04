@@ -1,0 +1,94 @@
+
+.poll-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto 4rem auto; 
+    padding: 2rem;
+    min-height: 69vh;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .poll-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .estado-cerrado {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  form {
+    margin-top: 1.5rem;
+  }
+  
+  .opcion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .opcion label {
+    flex-grow: 1;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  .votos {
+    margin-left: 1rem;
+    background-color: #e0e0e0;
+    padding: 0.2rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  
+  button[type="submit"],
+  .close-btn {
+    display: inline-block;
+    background-color: #305aa8;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover,
+  .close-btn:hover {
+    background-color: #2a345d;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .delete-btn {
+    display: inline-block;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-btn:hover {
+    background-color: #a71d2a;
+  }
+  
